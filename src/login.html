@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Login Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="./css/auth.css" />
+    <link rel="stylesheet" href="./css/drag.css" />
+  </head>
+  <style>
+    body {
+      overflow-x: hidden;
+    }
+  </style>
+  <body>
+    <div class="drag-region"></div>
+    <div id="authbody">
+      <div id="auth-drag" class="drag"></div>
+      <img alt="logo" id="auth-img" src="./images/logo.png" />
+      <input type="text" id="auth-input" placeholder="Key" />
+      <button id="auth-button">Activate</button>
+      <div id="auth-error"></div>
+    </div>
+    <script>
+      let $ = require("jquery");
+      const ipc = require("electron").ipcRenderer;
+
+      $("#auth-button").on("click", () => {
+        let key = $("#auth-input").val();
+        ipc.send("attempt-auth", key);
+      });
+
+      ipc.on("auth-error", (e, status) => {
+        $("#auth-error").text(status);
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,70 @@
+{
+  "name": "aurora",
+  "version": "0.0.6",
+  "description": "Aurora",
+  "main": "./app.js",
+  "author": "Aurora",
+  "repository": "",
+  "homepage": "",
+  "license": "ISC",
+  "private": true,
+  "scripts": {
+    "start": "electron .",
+    "dev": "nodemon --exec electron .",
+    "release": "electron-builder -mw -p 'onTagOrDraft'"
+  },
+  "devDependencies": {
+    "electron": "^9.0.0",
+    "electron-builder": "^22.7.0",
+    "nodemon": "^2.0.4"
+  },
+  "build": {
+    "appId": "io.stockcop.download",
+    "productName": "StockCop",
+    "publish": [
+      {
+        "provider": "github",
+        "owner": "MrSirDev",
+        "repo": "releases"
+      }
+    ],
+    "copyright": "Copyright © 2021 ${author}",
+    "mac": {
+      "category": "public.app-category.productivity"
+    },
+    "win": {
+      "certificateFile": "private/Certificates.p12",
+      "certificatePassword": "",
+      "verifyUpdateCodeSignature": false
+    }
+  },
+  "dependencies": {
+    "btoa": "^1.2.1",
+    "cheerio": "^1.0.0-rc.3",
+    "dayjs": "^1.8.34",
+    "discord-rich-presence": "devsnek/discord-rich-presence",
+    "electron-log": "^4.2.2",
+    "electron-settings": "^3.2.0",
+    "electron-store": "^5.1.1",
+    "electron-updater": "^4.3.4",
+    "express": "^4.17.1",
+    "fs": "^0.0.1-security",
+    "ip": "^1.1.5",
+    "jquery": "^3.5.1",
+    "koa": "^2.13.0",
+    "koa-body": "^4.2.0",
+    "koa-router": "^9.4.0",
+    "machine-uuid": "^1.2.0",
+    "moment": "^2.27.0",
+    "node-rsa": "^1.1.1",
+    "puppeteer": "^5.2.1",
+    "puppeteer-extra": "^3.1.15",
+    "puppeteer-extra-plugin-stealth": "^2.6.1",
+    "ramda": "^0.27.1",
+    "request": "^2.88.2",
+    "titanium-ticket-api-node": "^0.0.3",
+    "util": "^0.12.3",
+    "uuid": "^8.1.0",
+    "uuidv4": "^6.1.0"
+  }
+}

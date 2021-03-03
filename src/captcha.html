@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en" class="js no-touch csstransforms">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible" />
+    <title>Supreme</title>
+    <meta
+      content="Supreme. The official website of Supreme. EST 1994. NYC."
+      name="description"
+    />
+
+    <style>
+      .noselect {
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+
+      img {
+        -webkit-user-drag: none;
+        -khtml-user-drag: none;
+        -moz-user-drag: none;
+        -o-user-drag: none;
+        user-drag: none;
+      }
+
+      .drag {
+        -webkit-app-region: drag;
+      }
+
+      #body {
+        background: #1b1b22;
+        border-radius: 6px;
+        height: 616px;
+        width: 451px;
+        position: absolute;
+        top: 2px;
+        left: 2px;
+        color: #fff;
+      }
+
+      #top-bar {
+        height: 50px;
+        width: 100%;
+        background: linear-gradient(
+          90deg,
+          rgba(2, 0, 36, 1) 0%,
+          rgba(98, 110, 224, 1) 70%,
+          rgba(144, 160, 236, 1) 100%
+        );
+        border-top-left-radius: 6px;
+        border-top-right-radius: 6px;
+      }
+
+      body {
+        background: transparent;
+      }
+
+      #x-button {
+        position: absolute;
+        top: 12px;
+        left: 410px;
+        height: 25px;
+        cursor: pointer;
+        -webkit-app-region: no-drag;
+      }
+
+      #login-button {
+        background: linear-gradient(180deg, #409ffb, #1887fd);
+        position: absolute;
+        top: 560px;
+        left: 25px;
+        height: 34px;
+        width: 120px;
+        border-radius: 8px;
+        cursor: pointer;
+        text-align: center;
+        font-size: 0.9em;
+        font-weight: bold;
+        outline: none;
+        color: #fff;
+        border: none;
+      }
+
+      #harvest-button {
+        background: linear-gradient(180deg, #409ffb, #1887fd);
+        position: absolute;
+        top: 560px;
+        left: 155px;
+        height: 34px;
+        width: 120px;
+        border-radius: 8px;
+        cursor: pointer;
+        text-align: center;
+        font-size: 0.9em;
+        font-weight: bold;
+        outline: none;
+        color: #fff;
+        border: none;
+      }
+
+      #loader {
+        height: 200px;
+        width: auto;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+        padding-top: 140px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="body">
+      <div class="drag" id="top-bar">
+        <svg
+          id="x-button"
+          aria-hidden="true"
+          focusable="false"
+          data-prefix="far"
+          data-icon="times"
+          class="svg-inline--fa fa-times fa-w-10"
+          role="img"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 320 512"
+        >
+          <path
+            fill="#fff"
+            d="M207.6 256l107.72-107.72c6.23-6.23 6.23-16.34 0-22.58l-25.03-25.03c-6.23-6.23-16.34-6.23-22.58 0L160 208.4 52.28 100.68c-6.23-6.23-16.34-6.23-22.58 0L4.68 125.7c-6.23 6.23-6.23 16.34 0 22.58L112.4 256 4.68 363.72c-6.23 6.23-6.23 16.34 0 22.58l25.03 25.03c6.23 6.23 16.34 6.23 22.58 0L160 303.6l107.72 107.72c6.23 6.23 16.34 6.23 22.58 0l25.03-25.03c6.23-6.23 6.23-16.34 0-22.58L207.6 256z"
+          ></path>
+        </svg>
+      </div>
+
+      <div id="captcha-box">
+        <!-- 6LeWwRkUAAAAAOBsau7KpuC9AV-6J8mhw4AjC3Xz - Supreme -->
+        <div
+          class="g-recaptcha"
+          data-callback="checkoutAfterCaptcha"
+          data-sitekey="6LeWwRkUAAAAAOBsau7KpuC9AV-6J8mhw4AjC3Xz"
+          data-size="invisible"
+        ></div>
+        <script
+          type="text/javascript"
+          src="https://www.google.com/recaptcha/api.js"
+        ></script>
+      </div>
+
+      <svg
+        id="loader"
+        xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+        style="
+          margin: auto;
+          background: none;
+          display: block;
+          shape-rendering: auto;
+        "
+        width="263px"
+        height="263px"
+        viewBox="0 0 100 100"
+        preserveAspectRatio="xMidYMid"
+      >
+        <circle
+          cx="50"
+          cy="50"
+          fill="none"
+          stroke="#6e51ff"
+          stroke-width="2"
+          r="17"
+          stroke-dasharray="80.11061266653974 28.703537555513243"
+          transform="rotate(320.2 50 50)"
+        >
+          <animateTransform
+            attributeName="transform"
+            type="rotate"
+            repeatCount="indefinite"
+            dur="0.5944444444444443s"
+            values="0 50 50;360 50 50"
+            keyTimes="0;1"
+          ></animateTransform>
+        </circle>
+      </svg>
+
+      <button id="login-button">
+        Login
+      </button>
+    </div>
+
+    <script
+      type="text/javascript"
+      src="https://www.google.com/recaptcha/api.js"
+    ></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+      window.$ = window.jQuery = require("jquery");
+    </script>
+    <script>
+      if (typeof module === "object") {
+        window.module = module;
+        module = undefined;
+      }
+
+      var ipc = require("electron").ipcRenderer;
+      var capwindowIndex;
+      var globalTaskId;
+      const path = require("path");
+      // var remote = electron.remote;
+
+      document.getElementById("login-button").addEventListener("click", () => {
+        ipc.send("login", capwindowIndex);
+      });
+
+      let activeQueueId = false;
+      ipc.on("add-captcha", (e, queueId) => {
+        console.log(queueId);
+        activeQueueId = queueId;
+
+        document.getElementById("loader").hidden = true;
+        grecaptcha.execute();
+      });
+
+      function checkoutAfterCaptcha() {
+        ipc.send(
+          "got-captcha",
+          activeQueueId,
+          $("#g-recaptcha-response").val()
+        );
+        document.getElementById("loader").hidden = false;
+        grecaptcha.reset();
+      }
+
+      $("#x-button").click(() => {
+        ipc.send("quit-harvester");
+      });
+
+      $("#login-button").click(() => {
+        ipc.send("open-login");
+      });
+
+      const mainfolder =
+        process.env.APPDATA ||
+        ("darwin" === process.platform
+          ? `${process.env.HOME}/Library/Preferences`
+          : `${process.env.HOME}/.local/share`);
+      const CAPTCHAHARVESTERFOLDER = path.join(mainfolder, "HARVESTER");
+      const gcookiesfolder = path.join(CAPTCHAHARVESTERFOLDER, "g-cookies");
+
+      $("#harvest-button").click(() => {
+        var cookiepath = path.join(
+          mainfolder,
+          `HARVESTER/g-cookies/g-cookies_cookies.json`
+        );
+        var autoclick = false; //set it true for making an autoclick every 5 secs
+        ipc.send("captcha-harvesting", cookiepath, autoclick);
+      });
+    </script>
+  </body>
+</html>
